@@ -81,7 +81,7 @@ if __name__ == '__main__':
             local = comm.recv(source = src, tag = 0)
             global_space.particles = global_space.particles + local
         while(iteration < n_iterations):
-            space.update_gbest()
-            space.move_particles()
+           global_space.update_gbest()
+            global_space.move_particles()
             iteration +=1
         print("Executing time: ", MPI.Wtime() - start)
